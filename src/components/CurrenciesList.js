@@ -2,7 +2,9 @@ import React from 'react'
 
 function CurrenciesList() {
   return (
-    <div>CurrenciesList</div>
+    <div>
+      
+    </div>
   )
 }
 
