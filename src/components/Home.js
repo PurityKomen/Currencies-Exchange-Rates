@@ -5,12 +5,26 @@ import JSZip from "jszip";
 
 function Home() {
   const [currencies, setCurrencies] = useState([]);
+  const [scrollTop,setScrollTop] = useState(0)
 
   useEffect(() => {
     fetch("http://localhost:3000/fx")
       .then((response) => response.json())
       .then((data) => setCurrencies(data));
   }, []);
+
+  // on render, set listener
+  useEffect(() => {
+    window.addEventListener("scroll", isSticky);
+    return () => {
+      window.removeEventListener("scroll", isSticky);
+    };
+  }, []);
+
+  const isSticky = () => {
+    /* Method that will fix header after a specific scrollable */
+    setScrollTop(window.scrollY)
+  };
 
   const unzip = async () => {
     const zip = new JSZip();
@@ -29,13 +43,12 @@ function Home() {
 
       // Handle the error gracefully, such as displaying a message to the user
     }
-  }; 
+  };
   console.log("data3", unzip());
-
 
   return (
     <div className="container m-3 home">
-      <h3>Currencies and Exchange Rate</h3>
+      <h3 className={`header display-4 ${scrollTop > 0 ? 'hidden' : ''}`}>Currencies and Exchange Rate</h3>
       <Search />
 
       <table className="table table-bordered table-striped ms-4">

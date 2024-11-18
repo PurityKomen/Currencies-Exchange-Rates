@@ -13,7 +13,13 @@ code {
 }
 
 .home {
-  height: 112px;
-  width: 460px;
   color: #7d7da7;
+}
+
+.header {
+  transition: transform 0.3s ease-in-out;
+}
+
+.header.hidden {
+  transform: translateY(-100%);
 }
