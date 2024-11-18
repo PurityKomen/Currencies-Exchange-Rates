@@ -3,15 +3,15 @@ import React, { useState } from 'react'
 function Search({search}) {
   const [searchTerm, setSearchTerm] = useState('');
 
+  //set search term to be the value the user inputs on the search input
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
+  //handle data after a submit
   function handleSubmit(event){
     event.preventDefault()
-    const formData = {searchTerm:searchTerm}
     search(searchTerm)
-    console.log('formData',formData)
     setSearchTerm("")
 }
 

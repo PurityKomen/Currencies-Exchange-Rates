@@ -41,16 +41,17 @@ function Home() {
   };
   console.log("data3", unzip());
 
+  //fetch currencies data to display on the table
   useEffect(() => {
     fetch("http://localhost:3000/fx")
       .then((response) => response.json())
       .then((data) => setCurrencies(data));
   }, []);
 
+  //filter data based on the search term 
   let filteredData = currencies.filter((item) => {
     return item.nameI18N?.toLowerCase().includes(searchTerm.toLowerCase());
   });
-  console.log('hello',filteredData)
 
   const handleDataFromChild = (data) => {
     setSearchTerm(data);
@@ -76,7 +77,6 @@ function Home() {
         <tbody>
           {filteredData?.length > 0
             ? filteredData.map((item) => {
-              console.log('item',item)
                 return (
                   <CurrenciesList
                     key={item.id}

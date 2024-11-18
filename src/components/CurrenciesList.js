@@ -1,6 +1,7 @@
 import React from 'react'
 
 function CurrenciesList({flag,name,currency,exchangeRate}) {
+  //receive props from home page and display the data
   return (
     <>
       <tr>
