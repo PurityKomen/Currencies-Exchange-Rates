@@ -5,13 +5,8 @@ import JSZip from "jszip";
 
 function Home() {
   const [currencies, setCurrencies] = useState([]);
-  const [scrollTop,setScrollTop] = useState(0)
-
-  useEffect(() => {
-    fetch("http://localhost:3000/fx")
-      .then((response) => response.json())
-      .then((data) => setCurrencies(data));
-  }, []);
+  const [scrollTop, setScrollTop] = useState(0);
+  const [searchTerm, setSearchTerm] = useState("");
 
   // on render, set listener
   useEffect(() => {
@@ -23,7 +18,7 @@ function Home() {
 
   const isSticky = () => {
     /* Method that will fix header after a specific scrollable */
-    setScrollTop(window.scrollY)
+    setScrollTop(window.scrollY);
   };
 
   const unzip = async () => {
@@ -46,10 +41,27 @@ function Home() {
   };
   console.log("data3", unzip());
 
+  useEffect(() => {
+    fetch("http://localhost:3000/fx")
+      .then((response) => response.json())
+      .then((data) => setCurrencies(data));
+  }, []);
+
+  let filteredData = currencies.filter((item) => {
+    return item.nameI18N?.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+  console.log('hello',filteredData)
+
+  const handleDataFromChild = (data) => {
+    setSearchTerm(data);
+  };
+
   return (
     <div className="container m-3 home">
-      <h3 className={`header display-4 ${scrollTop > 0 ? 'hidden' : ''}`}>Currencies and Exchange Rate</h3>
-      <Search />
+      <h3 className={`header display-4 ${scrollTop > 0 ? "hidden" : ""}`}>
+        Currencies and Exchange Rate
+      </h3>
+      <Search search={handleDataFromChild} />
 
       <table className="table table-bordered table-striped ms-4">
         <thead>
@@ -62,17 +74,31 @@ function Home() {
         </thead>
 
         <tbody>
-          {currencies.map((item) => {
-            return (
-              <CurrenciesList
-                key={item.id}
-                flag={item.flag}
-                name={item.nameI18N}
-                currency={item.currency}
-                exchangeRate={item.exchangeRate?.buy}
-              />
-            );
-          })}
+          {filteredData?.length > 0
+            ? filteredData.map((item) => {
+              console.log('item',item)
+                return (
+                  <CurrenciesList
+                    key={item.id}
+                    flag={item.flag}
+                    name={item.nameI18N}
+                    currency={item.currency}
+                    exchangeRate={item.exchangeRate?.buy}
+                  />
+                );
+              })
+            : 
+            currencies.map((item) => {
+                return (
+                  <CurrenciesList
+                    key={item.id}
+                    flag={item.flag}
+                    name={item.nameI18N}
+                    currency={item.currency}
+                    exchangeRate={item.exchangeRate?.buy}
+                  />
+                );
+              })}
         </tbody>
       </table>
     </div>
