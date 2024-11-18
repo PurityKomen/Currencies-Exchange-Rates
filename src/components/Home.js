@@ -34,11 +34,11 @@ function Home() {
 
 
   return (
-    <div className="container m-3">
+    <div className="container m-3 home">
       <h3>Currencies and Exchange Rate</h3>
       <Search />
 
-      <table className="table table-bordered table-striped">
+      <table className="table table-bordered table-striped ms-4">
         <thead>
           <tr>
             <th scope="col">Flag</th>

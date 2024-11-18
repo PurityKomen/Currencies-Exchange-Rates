@@ -2,8 +2,8 @@ import React from 'react'
 
 function Search() {
   return (
-    <div>
-        <form className="justify-content-center m-4 w-50">
+    <div className='d-flex justify-content-center m-4'>
+        <form className="justify-content-center w-50">
         <div className="form-group row">
           <div className="col">
             <input type="currencies"  className="form-control" placeholder="Search"  />
