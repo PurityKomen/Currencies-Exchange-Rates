@@ -73,7 +73,7 @@ function Home() {
                     flag={item.currency}
                     name={item.nameI18N}
                     currency={item.currency}
-                    exchangeRate={item.exchangeRate?.buy}
+                    exchangeRate={item.exchangeRate?.sell}
                   />
                 );
               })}
