@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Search from "./Search";
 import CurrenciesList from "./CurrenciesList";
-import JSZip from "jszip";
 
 function Home() {
   const [currencies, setCurrencies] = useState([]);
@@ -21,26 +20,6 @@ function Home() {
     setScrollTop(window.scrollY);
   };
 
-  const unzip = async () => {
-    const zip = new JSZip();
-    try {
-      const zipData = await fetch("../../flags.zip");
-
-      // Convert the Response to Blob
-      const blob = await zipData.blob();
-
-      await zip.loadAsync(blob).then((zip) => {
-        console.log("data2", zip.file.length);
-        return zip.file("text/html").async("string");
-      });
-    } catch (error) {
-      console.error("Error loading ZIP file:", error);
-
-      // Handle the error gracefully, such as displaying a message to the user
-    }
-  };
-  console.log("data3", unzip());
-
   //fetch currencies data to display on the table
   useEffect(() => {
     fetch("http://localhost:3000/fx")
@@ -48,7 +27,7 @@ function Home() {
       .then((data) => setCurrencies(data));
   }, []);
 
-  //filter data based on the search term 
+  //filter data based on the search term
   let filteredData = currencies.filter((item) => {
     return item.nameI18N?.toLowerCase().includes(searchTerm.toLowerCase());
   });
@@ -80,19 +59,18 @@ function Home() {
                 return (
                   <CurrenciesList
                     key={item.id}
-                    flag={item.flag}
+                    flag={item.currency}
                     name={item.nameI18N}
                     currency={item.currency}
                     exchangeRate={item.exchangeRate?.buy}
                   />
                 );
               })
-            : 
-            currencies.map((item) => {
+            : currencies.map((item) => {
                 return (
                   <CurrenciesList
                     key={item.id}
-                    flag={item.flag}
+                    flag={item.currency}
                     name={item.nameI18N}
                     currency={item.currency}
                     exchangeRate={item.exchangeRate?.buy}

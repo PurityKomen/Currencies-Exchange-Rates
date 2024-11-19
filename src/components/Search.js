@@ -24,7 +24,7 @@ function Search({ search }) {
             <input
               type="currencies"
               className="form-control"
-              placeholder="Search"
+              placeholder="Search Name"
               value={searchTerm}
               onChange={handleChange}
             />
