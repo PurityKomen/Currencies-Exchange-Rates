@@ -1,6 +1,9 @@
-# Welcome to the ORTH coding exercise!
+# Description
 
 Your task will be to create a small one page application that displays all the currencies from the bank and their respective exchange rate. The base currency is Kenya Shillings (KES)
+
+## Live Link
+
 
 ## Specification
 
@@ -28,13 +31,9 @@ The search term should also be present in the URL hash and deep linking should w
 
  - Flags: See attached flags.zip
 
-## Tech-stack
+## Technologies Used
 
-Please create the application with ReactJS or other JavaScript based frameworks. Feel free to create your application using Create React App if you'd like.
-Redux or hooks or other libraries can optionally be used, but are not required. 
-For testing we recommend Jest. 
-You may write the application in JavaScript or TypeScript. Feel free to use any other library you need for this task.
+- ReactJs
+- Bootstrap
 
-The application source code should be in production ready state. Implement it the best way you can. The application should look nice ;)
 
-Good luck and have fun!
