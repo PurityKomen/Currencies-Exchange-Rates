@@ -4,7 +4,7 @@ Your task will be to create a small one page application that displays all the c
 
 ## Live Link
 
-1. For the fx.json file - [https://currencies-api-gwte.onrender.com/](https://currencies-api-gwte.onrender.com/)
+1. For the fx.json file - [https://currencies-api-72hd.vercel.app/](https://currencies-api-72hd.vercel.app/)
 
 2. For the app -  [https://currencies-exchange-rates.vercel.app/](https://currencies-exchange-rates.vercel.app/)
 
@@ -39,5 +39,6 @@ The search term should also be present in the URL hash and deep linking should w
 
 - ReactJs
 - Bootstrap
+- Vercel
 
 
