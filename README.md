@@ -4,9 +4,9 @@ Your task will be to create a small one page application that displays all the c
 
 ## Live Link
 
-1. For the fx.json file - [https://currencies-api-72hd-1ej23hxjb-jepkorirpurity8gmailcoms-projects.vercel.app/](https://currencies-api-72hd-1ej23hxjb-jepkorirpurity8gmailcoms-projects.vercel.app/)
+1. For the fx.json file - [https://currencies-api-gwte.onrender.com/](https://currencies-api-gwte.onrender.com/)
 
-2. 
+2. For the app -  [https://currencies-exchange-rates.vercel.app/](https://currencies-exchange-rates.vercel.app/)
 
 
 ## Specification
