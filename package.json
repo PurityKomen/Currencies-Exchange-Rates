@@ -11,6 +11,9 @@
     "jszip": "^3.10.1",
     "jszip-utils": "^0.1.0",
     "path": "^0.12.7",
+    "cors": "^2.8.5",
+    "json-serve": "^0.1.0",
+    "json-server": "^0.17.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
@@ -42,6 +45,12 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-transform-private-property-in-object": "^7.25.9"
-  }
+    "@babel/plugin-transform-private-property-in-object": "^7.25.9",
+    "json-server": "^0.17.4"
+  },
+  "description": "Your task will be to create a small one page application that displays all the currencies from the bank and their respective exchange rate. The base currency is Kenya Shillings (KES)",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
