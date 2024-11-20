@@ -4,6 +4,10 @@ Your task will be to create a small one page application that displays all the c
 
 ## Live Link
 
+1. For the fx.json file - [https://currencies-api-72hd-1ej23hxjb-jepkorirpurity8gmailcoms-projects.vercel.app/](https://currencies-api-72hd-1ej23hxjb-jepkorirpurity8gmailcoms-projects.vercel.app/)
+
+2. 
+
 
 ## Specification
 
