@@ -22,7 +22,7 @@ function Home() {
 
   //fetch currencies data to display on the table
   useEffect(() => {
-    fetch("https://currencies-api-gwte.onrender.com/fx")
+    fetch("https://currencies-api-72hd.vercel.app/fx")
       .then((response) => response.json())
       .then((data) => setCurrencies(data));
   }, []);
